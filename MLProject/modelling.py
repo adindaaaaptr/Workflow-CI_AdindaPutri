@@ -26,10 +26,3 @@ print(f"Accuracy: {acc}")
 # Simpan model ke folder 'model' (format MLflow)
 os.makedirs("model", exist_ok=True)
 mlflow.sklearn.save_model(model, "model")
-
-# (Opsional) logging ke MLflow lokal
-mlflow.set_tracking_uri("file:./mlruns")
-mlflow.set_experiment("iris-ci")
-with mlflow.start_run():
-    mlflow.log_metric("accuracy", acc)
-    mlflow.sklearn.log_model(model, "model_artifacts")
