@@ -1,0 +1,8 @@
+artifact_location: file:///home/runner/work/Workflow-CI_AdindaPutri/Workflow-CI_AdindaPutri/MLProject/mlruns/513953537007760974
+creation_time: 1780248961809
+experiment_id: '513953537007760974'
+last_update_time: 1780248961809
+lifecycle_stage: active
+name: ci-experiment
+trace_location: null
+workspace: default

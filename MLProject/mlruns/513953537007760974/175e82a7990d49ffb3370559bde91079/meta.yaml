@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/Workflow-CI_AdindaPutri/Workflow-CI_AdindaPutri/MLProject/mlruns/513953537007760974/175e82a7990d49ffb3370559bde91079/artifacts
+end_time: 1780248967381
+entry_point_name: ''
+experiment_id: '513953537007760974'
+lifecycle_stage: active
+run_id: 175e82a7990d49ffb3370559bde91079
+run_name: languid-wolf-302
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780248961979
+status: 3
+tags: []
+user_id: runner
