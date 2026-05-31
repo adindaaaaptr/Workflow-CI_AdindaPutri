@@ -26,7 +26,7 @@ jobs:
       - name: Run training (MLflow Project)
         run: |
           cd MLProject
-          mlflow run . --no-conda --experiment-name=ci-experiment
+          mlflow run . --env-manager local --experiment-name=ci-experiment
 
       - name: Commit model artifact
         run: |
