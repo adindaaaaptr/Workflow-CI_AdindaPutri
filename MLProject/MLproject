@@ -1,4 +1,6 @@
-name: iris-project
+name: iris_ci
+
+conda_env: conda.yaml
 
 entry_points:
   main:

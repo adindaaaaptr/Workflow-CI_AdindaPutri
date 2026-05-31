@@ -1,13 +1,16 @@
-name: MLflow CI Pipeline
+name: CI - Train & Save Artifact
 
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write # agar bisa push
 
 jobs:
-  train:
+  train-and-commit:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -18,11 +21,17 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install mlflow pandas numpy scikit-learn joblib matplotlib
+        run: pip install mlflow pandas scikit-learn matplotlib seaborn
 
-      - name: Run MLflow Project
+      - name: Run training (MLflow Project)
         run: |
           cd MLProject
-          mlflow run . --env-manager local
+          mlflow run . --experiment-name=ci-experiment
+
+      - name: Commit model artifact
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add MLProject/model MLProject/mlruns || true
+          git commit -m "Auto-update trained model [CI]" || echo "No changes"
+          git push

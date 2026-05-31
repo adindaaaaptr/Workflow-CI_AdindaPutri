@@ -1,12 +1,12 @@
-name: iris-env
-
+name: iris_ci_env
+channels:
+  - defaults
 dependencies:
   - python=3.11
   - pip
   - pip:
-      - mlflow
       - pandas
-      - numpy
       - scikit-learn
-      - joblib
       - matplotlib
+      - seaborn
+      - mlflow
